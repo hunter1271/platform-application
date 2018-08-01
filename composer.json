@@ -12,14 +12,6 @@
         "exclude-from-classmap": ["**/Tests/"]
     },
     "repositories": {
-        "platform-serialised-fields": {
-            "type": "vcs",
-            "url": "https://github.com/oroinc/OroEntitySerializedFieldsBundle"
-        },
-        "redis-config": {
-            "type": "vcs",
-            "url": "https://github.com/oroinc/redis-config"
-        },
         "composer": {
             "type": "composer",
             "url": "https://packagist.orocrm.com"
