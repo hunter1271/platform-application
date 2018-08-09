@@ -1,0 +1,20 @@
+navigation:
+  menu_config:
+    items:
+      dev_tab:
+        label: Dev section
+        uri:   '#'
+        extras:
+          position: 300
+      dev_tab_link:
+        label: Products
+        route: demo_product_list
+    tree:
+      application_menu:
+        children:
+          dev_tab:
+            children:
+              dev_tab_link: ~
+
+  titles:
+    demo_product_list: My products

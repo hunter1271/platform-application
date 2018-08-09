@@ -1,0 +1,32 @@
+datagrids:
+    dev-demo-products-grid:
+        source:
+            type: orm
+            query:
+                select:
+                - product.id
+                - product.name
+                from:
+                - { table: DevDemoBundle:Product, alias: product }
+        columns:
+            id:
+                label: ID
+                frontend_type: integer
+            name:
+                label: Name
+        sorters:
+            columns:
+                id:
+                    data_name: product.id
+                name:
+                    data_name: product.name
+            default:
+                id: ASC
+        filters:
+            columns:
+                id:
+                    type: number
+                    data_name: product.id
+                name:
+                    type: string
+                    data_name: product.name

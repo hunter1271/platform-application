@@ -1,0 +1,12 @@
+{% extends 'OroUIBundle:actions:index.html.twig' %}
+{% set gridName = 'dev-demo-products-grid' %}
+{% set pageTitle = 'Products' %}
+
+{% block navButtons %}
+    <div class="btn-group">
+        {{ UI.addButton({
+            'path': path('demo_product_create'),
+            'entity_label': 'Product',
+        }) }}
+    </div>
+{% endblock %}

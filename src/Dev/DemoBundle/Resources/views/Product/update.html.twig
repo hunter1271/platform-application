@@ -1,0 +1,51 @@
+{% extends 'OroUIBundle:actions:update.html.twig' %}
+
+{% form_theme form with 'OroFormBundle:Form:fields.html.twig' %}
+
+{% set product = form.vars.value %}
+
+{% set formAction = path('demo_product_create') %}
+
+{% block navButtons %}
+    {{ UI.cancelButton(path('demo_product_list')) }}
+    {{ UI.dropdownSaveButton({
+        'html': UI.saveAndCloseButton() ~ UI.saveAndStayButton()
+    }) }}
+{% endblock navButtons %}
+
+{% block pageHeader %}
+    {% if product.id %}
+        {% set breadcrumbs = {
+            'entity': product,
+            'indexPath': path('demo_product_list'),
+            'indexLabel': 'Products',
+            'entityTitle': product.name
+        } %}
+        {{ parent() }}
+    {% else %}
+        {% set title = 'oro.ui.create_entity'|trans({ '%entityName%': 'Product' }) %}
+        {{ include('OroUIBundle::page_title_block.html.twig', { title: title }) }}
+    {% endif %}
+{% endblock pageHeader %}
+
+{% block content_data %}
+        {% set id = 'product-edit' %}
+        {% set dataBlocks = [{
+                'title': 'General'|trans,
+                'class': 'active',
+                'subblocks': [{
+                    'title': '',
+                    'data': [
+                        form_row(form.name),
+                    ]
+                }]
+            }]
+        %}
+
+        {% set data = {
+            'formErrors': form_errors(form) ? form_errors(form) : null,
+            'dataBlocks': dataBlocks,
+        } %}
+
+        {{ parent() }}
+{% endblock content_data %}
