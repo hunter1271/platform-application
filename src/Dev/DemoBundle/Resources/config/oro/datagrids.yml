@@ -30,3 +30,17 @@ datagrids:
                 name:
                     type: string
                     data_name: product.name
+        properties:
+            id: ~
+            update_link:
+                type: url
+                route: demo_product_update
+                params:
+                    - id
+        actions:
+            update:
+                type:          navigate
+                label:         Update
+                link:          update_link
+                icon:          pencil-square-o
+                rowAction:     true

@@ -1,0 +1,2 @@
+services:
+    Oro\Bundle\UIBundle\Route\Router: '@oro_ui.router'

@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Dev\DemoBundle\Controller\:
+        resource: '../../Controller/*'
+        public: true
+        tags: ['controller.service_arguments']

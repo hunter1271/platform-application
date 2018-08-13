@@ -7,17 +7,24 @@
 {% set formAction = path('demo_product_create') %}
 
 {% block navButtons %}
-    {{ UI.cancelButton(path('demo_product_list')) }}
-    {{ UI.dropdownSaveButton({
-        'html': UI.saveAndCloseButton() ~ UI.saveAndStayButton()
-    }) }}
+    {{ UI.cancelButton(path('demo_product_index')) }}
+    {% set html = UI.saveAndCloseButton({
+        'class': 'btn-success role-submit',
+        'route': 'demo_product_index'
+    }) %}
+    {% set html = html ~  UI.saveAndStayButton({
+        'class': 'btn-success main-group role-submit',
+        'route': 'demo_product_update',
+        'params': {'id': '$id', '_enableContentProviders': 'mainMenu'}
+    }) %}
+    {{ UI.dropdownSaveButton({ 'html': html }) }}
 {% endblock navButtons %}
 
 {% block pageHeader %}
     {% if product.id %}
         {% set breadcrumbs = {
             'entity': product,
-            'indexPath': path('demo_product_list'),
+            'indexPath': path('demo_product_index'),
             'indexLabel': 'Products',
             'entityTitle': product.name
         } %}

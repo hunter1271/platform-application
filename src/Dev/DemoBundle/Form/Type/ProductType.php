@@ -1,6 +1,6 @@
 <?php
 
-namespace Dev\DemoBundle\Form;
+namespace Dev\DemoBundle\Form\Type;
 
 use Dev\DemoBundle\Entity\Product;
 use Symfony\Component\Form\AbstractType;

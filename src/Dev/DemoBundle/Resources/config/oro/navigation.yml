@@ -8,7 +8,7 @@ navigation:
           position: 300
       dev_tab_link:
         label: Products
-        route: demo_product_list
+        route: demo_product_index
     tree:
       application_menu:
         children:
@@ -17,4 +17,4 @@ navigation:
               dev_tab_link: ~
 
   titles:
-    demo_product_list: My products
+    demo_product_index: My products
