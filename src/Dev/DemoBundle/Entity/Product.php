@@ -10,6 +10,7 @@ use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\Config;
  *
  * @ORM\Entity()
  * @ORM\Table(name="dev_demo_products")
+ * @Config()
  */
 class Product
 {

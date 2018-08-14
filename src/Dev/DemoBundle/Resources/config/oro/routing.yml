@@ -1,5 +1,15 @@
 # src/Acme/Bundle/NewBundle/Resources/config/oro/routing.yml
 dev_demo_bundle:
-  resource:     "@DevDemoBundle/Controller"
-  type:         annotation
-  prefix:       /dev
+    resource:     "@DevDemoBundle/Controller"
+    type:         annotation
+    prefix:       /dev
+
+app.dev_demo_bundle.api.product:
+    resource: 'Dev\DemoBundle\Controller\Api\Rest\ProductController'
+    type: rest
+    prefix: api/rest/{version}/
+    requirements:
+        version: latest|v1
+        _format:  json
+    defaults:
+        version: latest

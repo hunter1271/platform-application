@@ -37,6 +37,11 @@ datagrids:
                 route: demo_product_update
                 params:
                     - id
+            delete_link:
+                type: url
+                route: dev_demo_api_delete_product
+                params:
+                    - id
         actions:
             update:
                 type:          navigate
@@ -44,3 +49,8 @@ datagrids:
                 link:          update_link
                 icon:          pencil-square-o
                 rowAction:     true
+            delete:
+                type:          delete
+                label:         Delete
+                link:          delete_link
+                icon:          trash-o

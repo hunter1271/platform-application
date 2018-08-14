@@ -1,9 +1,7 @@
 services:
-    _defaults:
-        autowire: true
-        autoconfigure: true
-
-    Dev\DemoBundle\Controller\:
-        resource: '../../Controller/*'
-        public: true
-        tags: ['controller.service_arguments']
+    dev_demo.api.product_manager:
+        class: 'Oro\Bundle\SoapBundle\Entity\Manager\ApiEntityManager'
+        parent: oro_soap.manager.entity_manager.abstract
+        arguments:
+            - 'Dev\DemoBundle\Entity\Product'
+            - '@doctrine.orm.entity_manager'
